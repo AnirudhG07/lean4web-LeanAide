@@ -22,7 +22,7 @@ if ! command -v bwrap >/dev/null 2>&1; then
   # )
 else
   (exec bwrap\
-    --ro-bind "$1" "/$PROJECT_NAME" \
+    --bind "$1" "/$PROJECT_NAME" \
     --ro-bind "$LEAN_ROOT" /lean \
     --ro-bind /usr /usr \
     --ro-bind /usr/share/zoneinfo/Asia/Kolkata /etc/localtime \
@@ -36,11 +36,8 @@ else
     --clearenv \
     --setenv PATH "/bin:/usr/bin:/lean/bin" \
     --setenv LEAN_PATH "$LEAN_PATH" \
-    --unshare-user \
-    --unshare-pid  \
-    --unshare-net  \
-    --unshare-uts  \
-    --unshare-cgroup \
+    --unshare-all \
+    --share-net \
     --die-with-parent \
     --chdir "/$PROJECT_NAME/" \
     lake serve --

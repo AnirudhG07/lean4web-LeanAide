@@ -56,6 +56,9 @@ export default defineConfig({
   base: "/", // setting this to `/leanweb/` means the server is now accessible at `localhost:3000/leanweb`
   server: {
     port: 3000,
+    watch: {
+      ignored: ['**/node_modules/**', '**/.lake/**']
+    },
     proxy: {
       '/websocket': {
         target: 'ws://localhost:8080',

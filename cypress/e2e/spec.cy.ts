@@ -41,16 +41,16 @@ describe('The Editor', () => {
     cy.viewport(550, 750)
     cy.visit('/')
     cy.get('.dropdown>.nav-link>.fa-bars').click()
-    cy.contains('.dropdown .dropdown', 'Exercises').click()
-    cy.contains('.nav-link', 'Logic').click()
-    cy.containsAll(['import Mathlib.Logic.Basic', 'variable (P Q : Prop)']).should('exist')
+    cy.contains('.dropdown .dropdown', 'Examples').click()
+    cy.contains('.nav-link', 'LeanAide Documentation').click()
+    cy.get('.modal').should('be.visible').and('contain', 'LeanAide or LeanAIde')
   })
 
   it('loads example correctly on desktop', () => {
     cy.visit('/')
-    cy.contains('.nav-link', 'Exercises').click()
-    cy.contains('.nav-link', 'Logic').click()
-    cy.containsAll(['import Mathlib.Logic.Basic', 'variable (P Q : Prop)']).should('exist')
+    cy.contains('.nav-link', 'Examples').click()
+    cy.contains('.nav-link', 'LeanAide Documentation').click()
+    cy.get('.modal').should('be.visible').and('contain', 'LeanAide or LeanAIde')
   })
 
   it('displays correct infoview state', () => {
