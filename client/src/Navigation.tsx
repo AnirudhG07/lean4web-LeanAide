@@ -222,6 +222,8 @@ export const Menu: FC <{
       }
       <NavButton icon={faArrowUpRightFromSquare} text="Lean community" href="https://leanprover-community.github.io/" />
       <NavButton icon={faArrowUpRightFromSquare} text="Lean documentation" href="https://leanprover.github.io/lean4/doc/" />
+      <NavButton icon={faArrowUpRightFromSquare} text="LeanAide Website" href="http://10.134.13.103:3000" />
+      <NavButton icon={faArrowUpRightFromSquare} text="LeanAide GitHub" href="https://github.com/siddhartha-gadgil/LeanAide" />
       <NavButton icon={faArrowUpRightFromSquare} text="GitHub" href="https://github.com/hhu-adam/lean4web" />
     </Dropdown>
     <PrivacyPopup open={privacyOpen} handleClose={() => setPrivacyOpen(false)} />
